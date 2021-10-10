@@ -1,12 +1,26 @@
-.header-text {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px;
-    background-color: blue;
+.header-row {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+  display: flex;
+  .main-icon {
+    width: 60px;
+    height: auto;
+  }
 }
-.first-part-container {
+
+.first-row-section {
+  display: flex;
+  flex-direction: row;
+  background-color: burlywood;
+
+  .add-to-do {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
+    align-items: flex-start;
+    width: 40%;
+  }
+  .show-list {
+    display: flex;
+    width: 60%;
+  }
 }
