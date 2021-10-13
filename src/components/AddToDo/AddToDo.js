@@ -28,18 +28,21 @@ const AddToDo = ({ tasks, setTasks }) => {
   // Handle adding single task from input field then add it to array of tasks
   // after that clear the text field
   const handleAddTask = (e) => {
-    setState({
-      ...state,
-      toDoTask: e.target.value,
-    });
-    addTaskToList();
-    handleClearTextArea();
+    let task = e.target.value;
+    if (task) {
+      setState({
+        ...state,
+        toDoTask: e.target.value,
+      });
+      addTaskToList();
+      handleClearTextArea();
+    }
   };
 
-  // Handle adding single task to tasks array 
+  // Handle adding single task to tasks array
   const addTaskToList = () => {
     tasks.push(state.toDoTask);
-    setTasks(tasks)
+    setTasks(tasks);
   };
 
   // returning the design that should be shown on web page
