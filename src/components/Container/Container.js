@@ -1,7 +1,7 @@
 // libraries imports
 import React, { useState } from "react";
 import { Row, Col } from "antd";
-// components imports
+// Components imports
 import AddToList from "../AddToDo";
 import ShowList from "../ShowList";
 import DoneList from "../DoneList";
@@ -36,7 +36,7 @@ const Container = () => {
         <Col className="add-to-do">
           <AddToList tasks={state.listOfTasks} setTasks={setTasks} />
         </Col>
-        <Col className="show-list" style={{ backgroundColor: "brown" }}>
+        <Col className="show-list">
           <ShowList tasksList={state.listOfTasks} />
         </Col>
       </Row>
