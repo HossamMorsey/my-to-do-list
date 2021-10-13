@@ -1,4 +1,9 @@
+// imports for general design
+@import "./../../css/variables.scss";
+@import "./../../css/basics.scss";
+@import "./../../css/mixins.scss";
+
 .add-todo-text{
-    margin-left: 10px !important;
-    background-color: cadetblue;
+    margin-left: 10px;
+    background-color: $addTaskBackground;
 }

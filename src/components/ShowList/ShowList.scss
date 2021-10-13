@@ -1,8 +1,69 @@
-.list-container{
-    display: flex;
-    flex-direction: column;
-    .list-item{
-        font-size: 15px;
-        
+@import "./../../css/variables.scss";
+
+.show-list-container {
+  width: 100%;
+  max-height: 400px;
+  overflow: auto;
+}
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: $showListBackground;
+  .list-item {
+    font-size: 15px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    .checkbox {
+      display: flex;
+      align-items: flex-end;
     }
+  }
+}
+
+.todo-tasks {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  .td,
+  .th {
+    border: solid 1px $textColor;
+    padding: 8px;
+  }
+}
+.todo-tasks tr:nth-child(even) {
+  background-color: #7efff5;
+}
+
+.todo-tasks tr:hover {
+  background-color: $hoverColor;
+  color: $hoverTextColor;
+}
+
+.todo-tasks th {
+  position: sticky;
+  top: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: $tableHeader;
+  color: $hoverTextColor;
+  border: solid 1px $textColor;
+}
+
+.single-task {
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   align-items: center;
+  padding-left: 10px;
+  margin-left: 10px;
+  border-bottom: solid 1px $textColor;
+}
+.numbering {
+  font-weight: bold;
+  border: solid 1px $textColor;
+}
+.delete,
+.check-box {
+  border: solid 1px $textColor;
 }

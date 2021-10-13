@@ -16,8 +16,6 @@
   }
 }
 
-
-
 @for $i from 1 through 1000{
   .width-#{$i}{
     width: #{$i}px !important;
@@ -35,9 +33,6 @@
     font-size: #{$i}px !important;
   }
 }
-
-
-
 
 @for $i from 1 through 1000{
   .padding-#{$i}{
