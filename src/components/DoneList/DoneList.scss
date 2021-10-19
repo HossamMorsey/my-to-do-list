@@ -1,0 +1,44 @@
+@import "./../../css/variables.scss";
+@import "./../../css/mixins.scss";
+@import "./../../css/basics.scss";
+
+.done-list-container {
+  width: 100%;
+  max-height: 300px;
+  overflow: auto;
+}
+.done-tasks th {
+  position: sticky;
+  top: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: $doneListHeader;
+  color: $hoverTextColor;
+  border: solid 1px $textColor;
+}
+.done-tasks {
+  margin-left: 10px;
+  padding-left: 10px;
+  width: 100%;
+  //   background-color: $doneListBackground;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  .td,
+  .th {
+    border: solid 1px $textColor;
+    padding: 8px;
+  }
+  .single-task {
+    // padding-left: 10px;
+    // margin-left: 10px;
+    border-bottom: solid 1px $textColor;
+    border-right: solid 1px $textColor;
+    background-color: $doneListBackground;
+  }
+  .numbering {
+    font-weight: bold;
+    border: solid 1px $textColor;
+    background-color: $doneListHeader;
+  }
+}
