@@ -3,7 +3,7 @@ import { Input, Button } from "antd";
 import { ClearOutlined, PlusOutlined } from "@ant-design/icons";
 import "./AddToDo.scss";
 
-const AddToDo = ({ tasks, setTasks }) => {
+const AddToDo = ({ tasks, setTasks, setTableVisible }) => {
   //Define Local state to get each task separately
   const [state, setState] = useState({
     toDoTask: "",
@@ -28,17 +28,19 @@ const AddToDo = ({ tasks, setTasks }) => {
   // Handle adding single task from input field then add it to array of tasks
   // after that clear the text field
   const handleAddTask = (e) => {
-    let task = e.target.value;
-    if (task) {
-      setState({
-        ...state,
-        toDoTask: e.target.value,
-      });
-      addTaskToList();
-      handleClearTextArea();
+    // Check if the task string is only space
+    // if yes, Don't add to the tasks list
+    if (state.toDoTask.trim().length === 0) {
+      return;
     }
+    setState({
+      ...state,
+      toDoTask: e.target.value,
+    });
+    addTaskToList();
+    handleClearTextArea();
+    setTableVisible(true);
   };
-
   // Handle adding single task to tasks array
   const addTaskToList = () => {
     tasks.push(state.toDoTask);
@@ -51,11 +53,22 @@ const AddToDo = ({ tasks, setTasks }) => {
       <Input
         onChange={onChangeText}
         onPressEnter={handleAddTask}
-        placeholder="Add your Task"
+        placeholder="Add Your Task ... "
         value={state.toDoTask}
+        className="input-text"
       />
-      <Button onClick={handleClearTextArea} icon={<ClearOutlined />} />
-      <Button onClick={handleAddTask} icon={<PlusOutlined />} />
+      <div className="buttons-container">
+        <Button
+          className="clear-button"
+          onClick={handleClearTextArea}
+          icon={<ClearOutlined className="clear-icon" />}
+        />
+        <Button
+          className="add-button"
+          onClick={(e) => handleAddTask(e)}
+          icon={<PlusOutlined className="add-icon" />}
+        />
+      </div>
     </div>
   );
 };
