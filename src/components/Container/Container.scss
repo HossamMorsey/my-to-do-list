@@ -13,17 +13,40 @@
 
 .first-row-section {
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background-color: $addTaskBackground;
-  height: 50%;
-  .add-to-do {
-    display: flex;
-    align-items: flex-start;
-    width: 30%;
+  height: 250px;
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+  .ant-col{
+    padding: 0% !important;
+    margin: 0% !important;
   }
+  .add-to-do {
+    // display: flex;
+    // align-items: flex-start;
+    
+    width: 100%;
+  }
+}
+.second-row-section {
+  display: flex;
+  flex-direction: row;
+  background-color: $showListBackground;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
   .show-list {
     display: flex;
-    width: 70%;
+    width: 50%;
     background-color: $showListBackground;
+  }
+  .done-list {
+    // display: flex;
+    width: 50%;
   }
 }
