@@ -36,7 +36,6 @@ const Container = () => {
       doneTasks: tasks,
     });
   };
-  // console.log("state", state.doneTasks)
 
   return (
     <div style={{ width: "98%" }}>
